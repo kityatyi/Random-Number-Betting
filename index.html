@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>RNG Dice</title>
+  </head>
+  <body>
+    <div class="dice-container">
+      <div class="dice-display" id="dice-d"></div>
+      <div class="score-display" id="score-d"></div>
+    </div>
+    <div class="button-container">
+      <input type="button" class="roll" value="Roll hi" id="hi" onclick="dice(1, 100, this.id)" />
+      <input type="button" class="roll" value="Roll lo" id="lo" onclick="dice(1, 100, this.id)" />
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
