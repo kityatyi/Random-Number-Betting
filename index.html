@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
@@ -19,9 +15,41 @@
       <div class="dice-display" id="dice-d"></div>
       <div class="score-display" id="score-d"></div>
     </div>
-    <div class="button-container">
-      <input type="button" class="roll" value="Roll hi" id="hi" onclick="dice(1, 100, this.id)" />
-      <input type="button" class="roll" value="Roll lo" id="lo" onclick="dice(1, 100, this.id)" />
+    <div class="slider-container">
+      <input type="range" class="slider" id="betting-range" min="1" max="100" value="50" />
+      <p><span id="value"></span></p>
+    </div>
+    <div class="button-container-top">
+      <input
+        type="button"
+        class="roll roll-lo"
+        value="Roll lo"
+        id="lo"
+        onclick="dice(1, 100, this.id)"
+      />
+      <input
+        type="button"
+        class="roll roll-hi"
+        value="Roll hi"
+        id="hi"
+        onclick="dice(1, 100, this.id)"
+      />
+    </div>
+    <div class="button-container-bottom">
+      <input
+        type="button"
+        class="roll roll-lo"
+        value="Roll odd"
+        id="odd"
+        onclick="dice(1, 100, this.id)"
+      />
+      <input
+        type="button"
+        class="roll roll-hi"
+        value="Roll even"
+        id="even"
+        onclick="dice(1, 100, this.id)"
+      />
     </div>
     <script src="app.js"></script>
   </body>

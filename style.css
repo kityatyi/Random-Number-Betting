@@ -1,12 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "JetBrains Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 html,
 body {
   background: #111;
+}
+
+p {
+  display: flex;
+  opacity: 0.7;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
+  color: #ccc;
 }
 
 .dice-container {
@@ -21,33 +29,42 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 175px;
-  height: 100px;
-  margin: 30px;
-  padding: 2px;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 100px;
+  width: 250px;
+  height: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 150px;
   color: #ccc;
   font-weight: bold;
   background: #333;
+  border-radius: 15px;
 }
 
 .score-display {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 30px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 50px;
   color: #dc143c;
   display: flex;
-  width: 175px;
-  height: 30px;
-  margin-bottom: 30px;
-  padding: 2px;
+  width: 250px;
+  height: 75px;
+  margin-bottom: 50px;
   background: #333;
+  border-radius: 5px;
 }
 
-.button-container {
+.button-container-top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-container-bottom {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -56,14 +73,73 @@ body {
 }
 
 .roll {
-  width: 75px;
-  margin: 6px;
-  padding: 2px;
+  width: 120px;
+  margin-top: 50px;
+  padding: 5px;
   outline: none;
-  background: #333;
+  background: linear-gradient(to left, #333, #444);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 16px;
   color: #ccc;
+  border-radius: 5px;
+}
+
+.roll-hi {
+  margin-left: 5px;
+}
+
+.roll-lo {
+  margin-right: 5px;
 }
 
 .roll:hover {
   background: #666;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.slider::before {
+  content: "0";
+  color: #ff4040;
+  font-size: 16px;
+}
+
+.slider::after {
+  content: "100";
+  color: #5ac18e;
+  font-size: 16px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  display: flex;
+  width: 250px;
+  background: linear-gradient(to right, #ff4040, #5ac18e);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px 1px #111;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
 }
